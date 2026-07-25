@@ -1,5 +1,4 @@
 (function () {
-  const META_FIELDS = ['Days', 'Times', 'Gender', 'Ages', 'Openings', 'Session', 'Tuition'];
   const REGISTER_URL = 'https://app.jackrabbitclass.com/regv2.asp?id=360293';
 
   function escapeHtml(text) {
@@ -10,18 +9,63 @@
       .replace(/"/g, '&quot;');
   }
 
-  function getCellValue(row, title) {
-    const cell = row.querySelector(`td[data-title="${title}"]`);
-    return cell ? cell.innerHTML.trim() : '';
+  function getTableHeaders(table) {
+    const headerRow = table.querySelector('thead tr');
+    if (!headerRow) return [];
+
+    return Array.from(headerRow.querySelectorAll('th, td')).map((cell) =>
+      cell.textContent.trim()
+    );
   }
 
-  function getCellText(row, title) {
-    const cell = row.querySelector(`td[data-title="${title}"]`);
-    return cell ? cell.textContent.trim() : '';
+  function getField(row, table, field) {
+    const cells = row.querySelectorAll('td');
+
+    for (const cell of cells) {
+      const title = cell.getAttribute('data-title') || '';
+      if (title.toLowerCase() === field.toLowerCase()) {
+        const value = cell.textContent.trim();
+        if (value) return value;
+      }
+    }
+
+    const headers = getTableHeaders(table);
+    const index = headers.findIndex((header) => header.toLowerCase() === field.toLowerCase());
+    if (index >= 0 && cells[index]) {
+      return cells[index].textContent.trim();
+    }
+
+    return '';
+  }
+
+  function getClassName(row, table) {
+    const className = getField(row, table, 'Class');
+    if (className && className.toLowerCase() !== 'class') return className;
+
+    const cells = row.querySelectorAll('td');
+    if (cells[1]) {
+      const fallback = cells[1].textContent.trim();
+      if (fallback && fallback.toLowerCase() !== 'class') return fallback;
+    }
+
+    return 'Class offering';
+  }
+
+  function formatTuition(value) {
+    if (!value) return '';
+    return value.startsWith('$') ? value : `$${value}`;
+  }
+
+  function formatOpenings(value) {
+    if (!value) return '';
+    if (value === '0') {
+      return '<span class="live-class-pill live-class-pill--waitlist">Waitlist</span>';
+    }
+    return `<span class="live-class-pill live-class-pill--open">${escapeHtml(value)} openings</span>`;
   }
 
   function buildAction(row) {
-    const registerCell = row.querySelector('td[data-title="Register"]');
+    const registerCell = row.querySelector('td[data-title="Register"]') || row.querySelector('td');
     if (!registerCell) {
       return `<a class="btn btn-register" href="${REGISTER_URL}" target="_blank" rel="noopener noreferrer">Register</a>`;
     }
@@ -32,44 +76,58 @@
       const href = link.getAttribute('href') || REGISTER_URL;
       const isWaitlist = /waitlist/i.test(label);
       const btnClass = isWaitlist ? 'btn btn-register btn-register--waitlist' : 'btn btn-register';
-      return `<a class="${btnClass}" href="${href}" target="_blank" rel="noopener noreferrer">${label}</a>`;
+      return `<a class="${btnClass}" href="${href}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)}</a>`;
     }
 
     return `<a class="btn btn-register" href="${REGISTER_URL}" target="_blank" rel="noopener noreferrer">Register</a>`;
   }
 
-  function buildMetaItems(row) {
-    return META_FIELDS.map((field) => {
-      const value = getCellText(row, field);
-      if (!value) return '';
+  function buildQuickFacts(row, table) {
+    const days = getField(row, table, 'Days');
+    const times = getField(row, table, 'Times');
+    const ages = getField(row, table, 'Ages');
+    const gender = getField(row, table, 'Gender');
+    const openings = getField(row, table, 'Openings');
+    const tuition = formatTuition(getField(row, table, 'Tuition'));
 
-      const openingsClass = field === 'Openings' && value === '0' ? ' live-class-meta-value--full' : '';
-      const displayValue = field === 'Openings' && value === '0' ? '0 (Waitlist)' : value;
-      const tuitionValue = field === 'Tuition' && value && !value.startsWith('$') ? `$${value}` : displayValue;
+    const items = [];
 
-      return `
-        <div class="live-class-meta-item">
-          <dt>${field}</dt>
-          <dd class="live-class-meta-value${openingsClass}">${field === 'Tuition' ? tuitionValue : displayValue}</dd>
-        </div>
-      `;
-    }).join('');
+    if (days) items.push(`<span class="live-class-fact"><strong>Days</strong> ${escapeHtml(days)}</span>`);
+    if (times) items.push(`<span class="live-class-fact"><strong>Times</strong> ${escapeHtml(times)}</span>`);
+    if (ages) items.push(`<span class="live-class-fact"><strong>Ages</strong> ${escapeHtml(ages)}</span>`);
+    if (gender) items.push(`<span class="live-class-fact"><strong>Gender</strong> ${escapeHtml(gender)}</span>`);
+    if (openings) items.push(formatOpenings(openings));
+    if (tuition) items.push(`<span class="live-class-fact live-class-fact--tuition"><strong>Tuition</strong> ${escapeHtml(tuition)}/mo</span>`);
+
+    return items.join('');
   }
 
-  function rowToCard(row) {
-    const className = escapeHtml(getCellText(row, 'Class') || 'Class');
-    const description = escapeHtml(getCellText(row, 'Description'));
+  function rowToCard(row, table) {
+    const className = escapeHtml(getClassName(row, table));
+    const description = escapeHtml(getField(row, table, 'Description'));
+    const session = escapeHtml(getField(row, table, 'Session'));
+    const quickFacts = buildQuickFacts(row, table);
 
     return `
       <article class="live-class-card">
-        <header class="live-class-card-header">
-          <h3>${className}</h3>
-          ${buildAction(row)}
-        </header>
-        ${description ? `<p class="live-class-card-desc">${description}</p>` : ''}
-        <dl class="live-class-card-meta">
-          ${buildMetaItems(row)}
-        </dl>
+        <div class="live-class-card-main">
+          <div class="live-class-card-copy">
+            <h3>${className}</h3>
+            ${quickFacts ? `<div class="live-class-facts">${quickFacts}</div>` : ''}
+          </div>
+          <div class="live-class-card-action">
+            ${buildAction(row)}
+          </div>
+        </div>
+        ${description || session ? `
+          <details class="live-class-details">
+            <summary>Class details</summary>
+            <div class="live-class-details-body">
+              ${description ? `<p>${description}</p>` : ''}
+              ${session ? `<p class="live-class-session"><strong>Session:</strong> ${session}</p>` : ''}
+            </div>
+          </details>
+        ` : ''}
       </article>
     `;
   }
@@ -82,7 +140,7 @@
 
     const grid = document.createElement('div');
     grid.className = 'live-class-grid';
-    grid.innerHTML = Array.from(rows).map(rowToCard).join('');
+    grid.innerHTML = Array.from(rows).map((row) => rowToCard(row, table)).join('');
 
     table.dataset.transformed = 'true';
     table.replaceWith(grid);
