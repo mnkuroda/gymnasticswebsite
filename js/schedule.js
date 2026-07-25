@@ -19,9 +19,7 @@
   }
 
   function getField(row, table, field) {
-    const cells = row.querySelectorAll('td');
-
-    for (const cell of cells) {
+    for (const cell of row.querySelectorAll('td, th')) {
       const title = cell.getAttribute('data-title') || '';
       if (title.toLowerCase() === field.toLowerCase()) {
         const value = cell.textContent.trim();
@@ -31,8 +29,11 @@
 
     const headers = getTableHeaders(table);
     const index = headers.findIndex((header) => header.toLowerCase() === field.toLowerCase());
-    if (index >= 0 && cells[index]) {
-      return cells[index].textContent.trim();
+    if (index >= 0) {
+      const cells = row.querySelectorAll('td, th');
+      if (cells[index]) {
+        return cells[index].textContent.trim();
+      }
     }
 
     return '';
@@ -42,10 +43,10 @@
     const className = getField(row, table, 'Class');
     if (className && className.toLowerCase() !== 'class') return className;
 
-    const cells = row.querySelectorAll('td');
-    if (cells[1]) {
-      const fallback = cells[1].textContent.trim();
-      if (fallback && fallback.toLowerCase() !== 'class') return fallback;
+    const classCell = row.querySelector('th[data-title="Class"], th.jr-header');
+    if (classCell) {
+      const value = classCell.textContent.trim();
+      if (value) return value;
     }
 
     return 'Class offering';
