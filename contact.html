@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Young's Gym in Wake Forest, NC — 1213 S Main St, 919-554-0606, office@youngsgym.com">
+  <title>Contact Us — Young's Gym</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main">
+      <a class="nav-logo" href="index.html">
+        <span class="nav-logo-mark" aria-hidden="true">YG</span>
+        Young's Gym
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="classes.html">Classes</a></li>
+        <li><a href="camps.html">Camps</a></li>
+        <li><a href="parties.html">Parties</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="history.html">Our Story</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="https://app.jackrabbitclass.com/regv2.asp?id=360293" target="_blank" rel="noopener noreferrer">Register</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="section-eyebrow">Get in touch</span>
+        <h1>Contact Us</h1>
+        <p>
+          Questions about classes, camps, parties, or team? We'd love to hear from you.
+        </p>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="contact-grid">
+        <aside class="contact-info-card">
+          <h3>Young's Gym</h3>
+          <div class="contact-detail">
+            <div>
+              <strong>Address</strong>
+              Young's Gymnastics &amp; Cheerleading, Inc.<br>
+              1213 S Main St<br>
+              Wake Forest, NC 27587
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div>
+              <strong>Phone</strong>
+              <a href="tel:+19195540606">919-554-0606</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:office@youngsgym.com">office@youngsgym.com</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div>
+              <strong>Location note</strong>
+              Just off HWY 98 bypass, behind the red and blue CarQuest auto parts store.
+            </div>
+          </div>
+          <a class="btn btn-light" href="https://www.google.com/maps/search/?api=1&query=1213+S+Main+St+Wake+Forest+NC+27587" target="_blank" rel="noopener noreferrer">Open in Maps</a>
+        </aside>
+
+        <form class="contact-form" id="contact-form">
+          <h3 style="margin: 0 0 1rem; color: var(--color-navy);">Send a message</h3>
+          <p class="form-note">Demo form only — messages are not sent. For real inquiries, call or email directly.</p>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="comments">Comments</label>
+            <textarea id="comments" name="comments" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+          <p id="form-status" class="form-note" hidden role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="index.html">
+            <span class="nav-logo-mark" aria-hidden="true">YG</span>
+            Young's Gym
+          </a>
+          <p>Family-owned gymnastics and cheerleading in Wake Forest, NC since 1994.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="classes.html">Classes</a></li>
+            <li><a href="camps.html">Camps</a></li>
+            <li><a href="parties.html">Birthday Parties</a></li>
+            <li><a href="team.html">Competitive Team</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>About</h4>
+          <ul>
+            <li><a href="history.html">Our History</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Visit</h4>
+          <ul>
+            <li>1213 S Main St, Wake Forest, NC</li>
+            <li><a href="tel:+19195540606">919-554-0606</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Young's Gymnastics &amp; Cheerleading, Inc.</p>
+        <p class="footer-disclaimer">Modern website recreation for portfolio purposes. Not affiliated with Young's Gym.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
