@@ -267,7 +267,7 @@ a:hover {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(220px, 340px);
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 440px);
   gap: 2.5rem;
   align-items: end;
   min-height: clamp(540px, 85vh, 760px);
@@ -316,38 +316,22 @@ a:hover {
   gap: 0.85rem;
 }
 
-.hero-stats {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.75rem;
-  align-self: center;
+.hero-visual {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  align-self: stretch;
+  min-height: 0;
 }
 
-.stat-card {
-  padding: 1rem 1.15rem;
-  border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.94);
-  border: 2px solid var(--color-lime);
-  text-align: center;
-  color: var(--color-navy-dark);
-  box-shadow: var(--shadow-md);
-}
-
-.stat-card strong {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 2.2rem;
-  line-height: 1;
-  letter-spacing: 0.04em;
-  color: var(--color-orange);
-}
-
-.stat-card span {
-  font-size: 0.78rem;
-  color: var(--color-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-weight: 600;
+.hero-feature-image {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  max-height: min(720px, 78vh);
+  object-fit: contain;
+  object-position: bottom center;
+  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.4));
 }
 
 /* Sections */
@@ -1274,9 +1258,13 @@ a:hover {
     padding-block: 3rem 2rem;
   }
 
-  .hero-stats {
-    grid-template-columns: repeat(3, 1fr);
-    align-self: stretch;
+  .hero-visual {
+    max-width: 360px;
+    margin-inline: auto;
+  }
+
+  .hero-feature-image {
+    max-height: min(520px, 60vh);
   }
 
   .split,
@@ -1325,8 +1313,8 @@ a:hover {
     display: none;
   }
 
-  .hero-stats {
-    grid-template-columns: 1fr;
+  .hero-feature-image {
+    max-height: min(420px, 55vh);
   }
 
   .nav-logo-img {
