@@ -1,16 +1,22 @@
 /* Young's Gym — modern recreation */
 :root {
-  --color-navy: #0c1f3d;
-  --color-navy-light: #152a4f;
-  --color-red: #d62839;
-  --color-red-hover: #b81f2f;
-  --color-gold: #f4a261;
-  --color-gold-soft: #fde8d0;
-  --color-cream: #faf8f5;
+  --color-navy: #0054a6;
+  --color-navy-light: #1a6bc4;
+  --color-navy-dark: #003d7a;
+  --color-red: #e31837;
+  --color-red-hover: #c41230;
+  --color-yellow: #ffd100;
+  --color-yellow-soft: #fff8d6;
+  --color-orange: #f7941d;
+  --color-orange-hover: #e07f0a;
+  --color-lime: #8dc63f;
+  --color-gold: #f7941d;
+  --color-gold-soft: #fff3e0;
+  --color-cream: #fffdf7;
   --color-white: #ffffff;
   --color-text: #1a2332;
   --color-muted: #5c6678;
-  --color-border: #e4e8ef;
+  --color-border: #dce8f5;
   --font-display: "Bebas Neue", sans-serif;
   --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
   --shadow-sm: 0 2px 8px rgba(12, 31, 61, 0.06);
@@ -67,9 +73,10 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 3px solid var(--color-lime);
+  box-shadow: 0 2px 12px rgba(0, 84, 166, 0.08);
 }
 
 .nav {
@@ -83,27 +90,21 @@ a:hover {
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
-  color: var(--color-navy);
-  font-family: var(--font-display);
-  font-size: 1.65rem;
-  letter-spacing: 0.04em;
-  line-height: 1;
+  flex-shrink: 0;
 }
 
 .nav-logo:hover {
-  color: var(--color-red);
+  opacity: 0.92;
 }
 
-.nav-logo-mark {
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, var(--color-red), #ff6b6b);
-  color: white;
-  font-size: 1.1rem;
+.nav-logo-img {
+  display: block;
+  height: 52px;
+  width: auto;
+}
+
+.nav-logo-img--footer {
+  height: 58px;
 }
 
 .nav-menu {
@@ -126,8 +127,8 @@ a:hover {
 
 .nav-menu a:hover,
 .nav-menu a.active {
-  color: var(--color-red);
-  background: rgba(214, 40, 57, 0.08);
+  color: var(--color-navy);
+  background: var(--color-yellow-soft);
 }
 
 .nav-actions {
@@ -192,12 +193,13 @@ a:hover {
 }
 
 .btn-primary {
-  background: var(--color-red);
+  background: var(--color-orange);
   color: white;
+  box-shadow: 0 4px 14px rgba(247, 148, 29, 0.35);
 }
 
 .btn-primary:hover {
-  background: var(--color-red-hover);
+  background: var(--color-orange-hover);
   color: white;
 }
 
@@ -213,21 +215,19 @@ a:hover {
 }
 
 .btn-light {
-  background: white;
-  color: var(--color-navy);
+  background: var(--color-yellow);
+  color: var(--color-navy-dark);
+  font-weight: 700;
 }
 
 .btn-light:hover {
-  background: var(--color-gold-soft);
+  background: white;
   color: var(--color-navy);
 }
 
 /* Hero */
 .hero {
   position: relative;
-  min-height: clamp(520px, 82vh, 720px);
-  display: flex;
-  align-items: center;
   overflow: hidden;
   color: white;
 }
@@ -236,15 +236,29 @@ a:hover {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(115deg, rgba(12, 31, 61, 0.88) 0%, rgba(12, 31, 61, 0.55) 55%, rgba(214, 40, 57, 0.35) 100%),
-    url("https://images.unsplash.com/photo-1576678927483-cc7300f66d66?auto=format&fit=crop&w=1600&q=80") center / cover no-repeat;
+    linear-gradient(
+      105deg,
+      rgba(0, 61, 122, 0.82) 0%,
+      rgba(0, 84, 166, 0.55) 45%,
+      rgba(247, 148, 29, 0.25) 100%
+    ),
+    url("../assets/images/YoungsGymOldDays-rotated.jpg") center / cover no-repeat;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 340px);
+  gap: 2.5rem;
+  align-items: end;
+  min-height: clamp(540px, 85vh, 760px);
+  padding-block: 3.5rem 2.5rem;
 }
 
 .hero-content {
-  position: relative;
-  z-index: 1;
-  padding-block: 4rem;
-  max-width: 640px;
+  max-width: 620px;
+  padding-top: 1rem;
 }
 
 .hero-eyebrow {
@@ -254,9 +268,10 @@ a:hover {
   margin: 0 0 1rem;
   padding: 0.35rem 0.85rem;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.12);
+  background: var(--color-yellow);
+  color: var(--color-navy-dark);
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
@@ -284,37 +299,37 @@ a:hover {
 }
 
 .hero-stats {
-  position: absolute;
-  right: max(1rem, calc((100vw - 1120px) / 2));
-  bottom: 2rem;
-  z-index: 1;
   display: grid;
-  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  grid-template-columns: 1fr;
   gap: 0.75rem;
+  align-self: center;
 }
 
 .stat-card {
-  padding: 1rem 1.1rem;
+  padding: 1rem 1.15rem;
   border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.94);
+  border: 2px solid var(--color-lime);
   text-align: center;
+  color: var(--color-navy-dark);
+  box-shadow: var(--shadow-md);
 }
 
 .stat-card strong {
   display: block;
   font-family: var(--font-display);
-  font-size: 2rem;
+  font-size: 2.2rem;
   line-height: 1;
   letter-spacing: 0.04em;
+  color: var(--color-orange);
 }
 
 .stat-card span {
   font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--color-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  font-weight: 600;
 }
 
 /* Sections */
@@ -339,7 +354,7 @@ a:hover {
 .section-eyebrow {
   display: inline-block;
   margin-bottom: 0.5rem;
-  color: var(--color-red);
+  color: var(--color-orange);
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -428,6 +443,39 @@ a:hover {
   width: 100%;
 }
 
+.program-card-image--schedule {
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-light) 60%, var(--color-orange) 100%);
+  position: relative;
+}
+
+.schedule-icon {
+  font-size: 4rem;
+  line-height: 1;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+}
+
+.schedule-live-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: var(--color-lime);
+  color: var(--color-navy-dark);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  animation: pulse-live 2s ease-in-out infinite;
+}
+
+@keyframes pulse-live {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.75; }
+}
+
 .program-card-body {
   display: flex;
   flex-direction: column;
@@ -490,8 +538,9 @@ a:hover {
 /* CTA band */
 .cta-band {
   padding-block: 3.5rem;
-  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-light) 100%);
+  background: linear-gradient(135deg, var(--color-navy-dark) 0%, var(--color-navy) 55%, var(--color-navy-light) 100%);
   color: white;
+  border-top: 4px solid var(--color-yellow);
 }
 
 .cta-band-inner {
@@ -599,8 +648,8 @@ a:hover {
   height: 32px;
   margin-bottom: 0.75rem;
   border-radius: 50%;
-  background: var(--color-red);
-  color: white;
+  background: var(--color-navy);
+  color: var(--color-yellow);
   font-size: 0.85rem;
   font-weight: 700;
 }
@@ -631,7 +680,7 @@ a:hover {
   font-size: 3rem;
   line-height: 1;
   letter-spacing: 0.03em;
-  color: var(--color-red);
+  color: var(--color-orange);
 }
 
 .pricing-list {
@@ -651,7 +700,7 @@ a:hover {
   content: "✓";
   position: absolute;
   left: 0;
-  color: var(--color-red);
+  color: var(--color-lime);
   font-weight: 700;
 }
 
@@ -879,10 +928,16 @@ a:hover {
 
 /* Responsive */
 @media (max-width: 960px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    align-items: start;
+    min-height: auto;
+    padding-block: 3rem 2rem;
+  }
+
   .hero-stats {
-    position: static;
-    margin-top: 2rem;
     grid-template-columns: repeat(3, 1fr);
+    align-self: stretch;
   }
 
   .split,
@@ -933,6 +988,10 @@ a:hover {
 
   .hero-stats {
     grid-template-columns: 1fr;
+  }
+
+  .nav-logo-img {
+    height: 42px;
   }
 
   .cta-band-inner {
