@@ -837,6 +837,115 @@ a:hover {
   font-style: italic;
 }
 
+.camp-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.camp-details-grid--compact {
+  margin-bottom: 1.5rem;
+}
+
+.camp-detail-card {
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  background: white;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.camp-detail-card h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+  color: var(--color-navy);
+}
+
+.camp-detail-card p,
+.camp-detail-card ul {
+  margin: 0;
+  color: var(--color-text);
+}
+
+.camp-detail-card ul {
+  padding-left: 1.25rem;
+}
+
+.camp-detail-card li + li {
+  margin-top: 0.35rem;
+}
+
+.camp-detail-note {
+  margin-top: 0.5rem !important;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.camp-detail-card--pricing {
+  background: var(--color-yellow-soft);
+  border-color: var(--color-navy);
+}
+
+.camp-price-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.5rem !important;
+}
+
+.camp-price-line:last-child {
+  margin-bottom: 0 !important;
+}
+
+.camp-price-line span {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+}
+
+.camp-price-line strong {
+  font-size: 1.25rem;
+  color: var(--color-navy);
+}
+
+.camp-disclaimer {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.camp-disclaimer a {
+  color: var(--color-navy);
+}
+
+.camp-jump-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.camp-jump-nav a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.camp-jump-nav a:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.camp-section {
+  scroll-margin-top: 6rem;
+}
+
 .schedule-section {
   padding-block: clamp(3.5rem, 7vw, 5rem);
   background: var(--color-orange);
