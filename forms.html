@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Online forms for Young's Gym — class drop requests and trial class requests.">
+  <title>Forms — Young's Gym</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="utility-bar">
+      <div class="utility-bar-inner">
+        <a href="https://app.jackrabbitclass.com/regv2.asp?id=360293" target="_blank" rel="noopener noreferrer">New Member Registration</a>
+      </div>
+    </div>
+    <nav class="nav" aria-label="Main">
+      <a class="nav-logo" href="index.html">
+        <img src="assets/images/youngs_horizontal_logo-298x72.webp" alt="Young's Gym — kids in motion" width="298" height="72" class="nav-logo-img">
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li class="nav-item nav-item--dropdown">
+          <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="nav-programs-menu">Programs <span class="nav-chevron" aria-hidden="true"></span></button>
+          <ul class="nav-dropdown-menu" id="nav-programs-menu">
+            <li><a href="classes.html">Gymnastics Classes</a></li>
+            <li><a href="camps.html">Camps</a></li>
+            <li><a href="parties.html">Birthday Parties</a></li>
+            <li><a href="parents-night-out.html">Parents Night Out</a></li>
+            <li><a href="private-lessons.html">Private Lessons</a></li>
+            <li><a href="team.html">Team &amp; Pre-Teams</a></li>
+          </ul>
+        </li>
+        <li><a href="schedule.html">Live Schedule</a></li>
+        <li><a href="history.html">Our Story</a></li>
+        <li><a href="policies-faq.html">Policies &amp; FAQ</a></li>
+        <li><a href="forms.html">Forms</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="https://app.jackrabbitclass.com/regv2.asp?id=360293" target="_blank" rel="noopener noreferrer">Register</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="forms-page">
+    <section class="page-hero">
+      <div class="container">
+        <span class="section-eyebrow">Online forms</span>
+        <h1>Forms</h1>
+        <p>
+          Submit a class drop request or request a complimentary trial class. Select a form below to open it.
+        </p>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="forms-grid">
+        <article class="form-card">
+          <span class="form-card-icon" aria-hidden="true">📋</span>
+          <h2>Class Drop Request</h2>
+          <p>
+            Withdraw from a year-round class. Submit on or before the <strong>25th of the month</strong> to prevent
+            next month's tuition from being drafted on the 26th.
+          </p>
+          <ul class="form-card-points">
+            <li>Required for all class withdrawals</li>
+            <li>One form covers multiple children</li>
+            <li>Email confirmation receipt</li>
+          </ul>
+          <button type="button" class="btn btn-primary" data-open-modal="drop-request-modal">Open Drop Request Form</button>
+        </article>
+
+        <article class="form-card">
+          <span class="form-card-icon" aria-hidden="true">⭐</span>
+          <h2>Trial Class Request</h2>
+          <p>
+            Try a gymnastics class at no cost — for families new to Young's Gym. A trial is not confirmed until
+            the office emails you.
+          </p>
+          <ul class="form-card-points">
+            <li>New students only</li>
+            <li>Check <a href="schedule.html">live class availability</a> first</li>
+            <li>Liability release required</li>
+          </ul>
+          <button type="button" class="btn btn-primary" data-open-modal="trial-class-modal">Open Trial Class Form</button>
+        </article>
+      </div>
+
+      <p class="forms-note text-center">
+        Demo site — forms display a confirmation message but do not send data. For help, call
+        <a href="tel:+19195540606">919-554-0606</a> or see <a href="policies-faq.html">Policies &amp; FAQ</a>.
+      </p>
+    </section>
+  </main>
+
+  <dialog class="form-modal" id="drop-request-modal" aria-labelledby="drop-request-title">
+    <div class="form-modal-panel">
+      <header class="form-modal-header">
+        <div>
+          <span class="section-eyebrow">Withdrawal</span>
+          <h2 id="drop-request-title">Class Drop Request</h2>
+        </div>
+        <button type="button" class="form-modal-close" data-close-modal aria-label="Close drop request form">&times;</button>
+      </header>
+
+      <form class="site-form" id="drop-request-form">
+        <div class="form-modal-body">
+          <p class="form-intro">
+            We're sorry to see you go. Please complete all fields below. If dropping more than one child, use this
+            single form — additional child name fields are optional.
+          </p>
+
+          <fieldset class="form-section">
+            <legend>Date &amp; children</legend>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="drop-date">Today's date</label>
+                <input type="date" id="drop-date" name="date" required>
+              </div>
+            </div>
+            <div class="form-row form-row--2">
+              <div class="form-group">
+                <label for="drop-child-1">Child's name</label>
+                <input type="text" id="drop-child-1" name="child1" required autocomplete="name" placeholder="First and last name">
+              </div>
+              <div class="form-group">
+                <label for="drop-child-2">2nd child's name <span class="label-optional">(optional)</span></label>
+                <input type="text" id="drop-child-2" name="child2" autocomplete="name" placeholder="First and last name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="drop-child-3">3rd child's name <span class="label-optional">(optional)</span></label>
+              <input type="text" id="drop-child-3" name="child3" autocomplete="name" placeholder="First and last name">
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Parent / guardian</legend>
+            <div class="form-group">
+              <label for="drop-parent">Parent or guardian's name</label>
+              <input type="text" id="drop-parent" name="parent" required autocomplete="name" placeholder="First and last name">
+            </div>
+            <div class="form-group">
+              <label for="drop-address">Street address</label>
+              <input type="text" id="drop-address" name="address" required autocomplete="street-address">
+            </div>
+            <div class="form-row form-row--3">
+              <div class="form-group">
+                <label for="drop-city">City</label>
+                <input type="text" id="drop-city" name="city" required autocomplete="address-level2">
+              </div>
+              <div class="form-group">
+                <label for="drop-state">State</label>
+                <select id="drop-state" name="state" required>
+                  <option value="NC" selected>North Carolina</option>
+                  <option value="VA">Virginia</option>
+                  <option value="SC">South Carolina</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="drop-zip">ZIP</label>
+                <input type="text" id="drop-zip" name="zip" required inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}(-[0-9]{4})?">
+              </div>
+            </div>
+            <div class="form-row form-row--2">
+              <div class="form-group">
+                <label for="drop-phone">Phone</label>
+                <input type="tel" id="drop-phone" name="phone" required autocomplete="tel">
+              </div>
+              <div class="form-group">
+                <label for="drop-email">Email (for receipt)</label>
+                <input type="email" id="drop-email" name="email" required autocomplete="email" data-email>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="drop-email-confirm">Confirm email</label>
+              <input type="email" id="drop-email-confirm" name="email_confirm" required autocomplete="email" data-email-confirm>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Drop details</legend>
+            <div class="form-group">
+              <label for="drop-reason">Reason for dropping</label>
+              <textarea id="drop-reason" name="reason" required placeholder="Please share why you're leaving — honest feedback helps us improve."></textarea>
+            </div>
+            <label class="checkbox-field">
+              <input type="checkbox" name="drop_policy" required>
+              <span>
+                I have read and agree to the <a href="policies-faq.html">drop policy</a>. I understand this request takes effect for the following month; no credits or refunds apply for the current month; remaining paid classes may be used; unmade-up missed classes are forfeited.
+              </span>
+            </label>
+          </fieldset>
+        </div>
+
+        <footer class="form-modal-footer">
+          <p id="drop-form-status" class="form-status" hidden role="status"></p>
+          <div class="form-modal-actions">
+            <button type="button" class="btn btn-light" data-close-modal>Cancel</button>
+            <button type="submit" class="btn btn-primary">Submit Drop Request</button>
+          </div>
+        </footer>
+      </form>
+    </div>
+  </dialog>
+
+  <dialog class="form-modal" id="trial-class-modal" aria-labelledby="trial-class-title">
+    <div class="form-modal-panel">
+      <header class="form-modal-header">
+        <div>
+          <span class="section-eyebrow">New families</span>
+          <h2 id="trial-class-title">Trial Class Request</h2>
+        </div>
+        <button type="button" class="form-modal-close" data-close-modal aria-label="Close trial class form">&times;</button>
+      </header>
+
+      <form class="site-form" id="trial-class-form">
+        <div class="form-modal-body">
+          <p class="form-intro">
+            Trial classes are for students who have never attended a class at Young's Gym. Your trial is
+            <strong>not confirmed</strong> until you receive email from the business office.
+          </p>
+
+          <fieldset class="form-section">
+            <legend>Request date</legend>
+            <div class="form-group">
+              <label for="trial-date">Today's date</label>
+              <input type="date" id="trial-date" name="date" required>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Child 1</legend>
+            <div class="form-row form-row--3">
+              <div class="form-group form-group--span-2">
+                <label for="trial-child-1">Full name</label>
+                <input type="text" id="trial-child-1" name="child1" required autocomplete="name" placeholder="First and last name">
+              </div>
+              <div class="form-group">
+                <label for="trial-gender-1">Gender</label>
+                <select id="trial-gender-1" name="gender1" required>
+                  <option value="">Select</option>
+                  <option value="female">Female</option>
+                  <option value="male">Male</option>
+                  <option value="other">Prefer not to say</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="trial-birth-1">Birth date</label>
+              <input type="date" id="trial-birth-1" name="birth1" required>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section form-section--optional">
+            <legend>Child 2 <span class="label-optional">(optional)</span></legend>
+            <div class="form-row form-row--3">
+              <div class="form-group form-group--span-2">
+                <label for="trial-child-2">Full name</label>
+                <input type="text" id="trial-child-2" name="child2" autocomplete="name" placeholder="First and last name">
+              </div>
+              <div class="form-group">
+                <label for="trial-gender-2">Gender</label>
+                <select id="trial-gender-2" name="gender2">
+                  <option value="">Select</option>
+                  <option value="female">Female</option>
+                  <option value="male">Male</option>
+                  <option value="other">Prefer not to say</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="trial-birth-2">Birth date</label>
+              <input type="date" id="trial-birth-2" name="birth2">
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section form-section--optional">
+            <legend>Child 3 <span class="label-optional">(optional)</span></legend>
+            <div class="form-row form-row--3">
+              <div class="form-group form-group--span-2">
+                <label for="trial-child-3">Full name</label>
+                <input type="text" id="trial-child-3" name="child3" autocomplete="name" placeholder="First and last name">
+              </div>
+              <div class="form-group">
+                <label for="trial-gender-3">Gender</label>
+                <select id="trial-gender-3" name="gender3">
+                  <option value="">Select</option>
+                  <option value="female">Female</option>
+                  <option value="male">Male</option>
+                  <option value="other">Prefer not to say</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="trial-birth-3">Birth date</label>
+              <input type="date" id="trial-birth-3" name="birth3">
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Parent / guardian &amp; contact</legend>
+            <div class="form-group">
+              <label for="trial-parent">Parent or guardian's full name</label>
+              <input type="text" id="trial-parent" name="parent" required autocomplete="name" placeholder="First and last name">
+            </div>
+            <div class="form-group">
+              <label for="trial-address">Mailing address</label>
+              <input type="text" id="trial-address" name="address" required autocomplete="street-address">
+            </div>
+            <div class="form-row form-row--3">
+              <div class="form-group">
+                <label for="trial-city">City</label>
+                <input type="text" id="trial-city" name="city" required autocomplete="address-level2">
+              </div>
+              <div class="form-group">
+                <label for="trial-state">State</label>
+                <select id="trial-state" name="state" required>
+                  <option value="NC" selected>North Carolina</option>
+                  <option value="VA">Virginia</option>
+                  <option value="SC">South Carolina</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="trial-zip">ZIP</label>
+                <input type="text" id="trial-zip" name="zip" required inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}(-[0-9]{4})?">
+              </div>
+            </div>
+            <div class="form-row form-row--2">
+              <div class="form-group">
+                <label for="trial-phone">Phone</label>
+                <input type="tel" id="trial-phone" name="phone" autocomplete="tel">
+              </div>
+              <div class="form-group">
+                <label for="trial-email">Email</label>
+                <input type="email" id="trial-email" name="email" required autocomplete="email" data-email>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="trial-email-confirm">Confirm email</label>
+              <input type="email" id="trial-email-confirm" name="email_confirm" required autocomplete="email" data-email-confirm>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Class request</legend>
+            <div class="form-group">
+              <label for="trial-class-request">Class title, day &amp; time</label>
+              <textarea id="trial-class-request" name="class_request" required placeholder="e.g. Tiny Tots — Tuesday 4:30 PM. See live schedule for openings."></textarea>
+            </div>
+            <label class="checkbox-field">
+              <input type="checkbox" name="liability" required>
+              <span>
+                I have read and agree to the liability &amp; release agreement. I understand gymnastics and cheer involve risk of injury and release Young's Gym, its owners, and employees from personal injury claims arising from participation.
+              </span>
+            </label>
+            <label class="checkbox-field">
+              <input type="checkbox" name="full_class" required>
+              <span>
+                I understand the desired trial class may be at full capacity and unavailable until a spot opens.
+              </span>
+            </label>
+            <label class="checkbox-field">
+              <input type="checkbox" name="email_confirm_ack" required>
+              <span>
+                I understand my trial class date and time are <strong>not confirmed</strong> until I receive email from the Young's Gym business office (weekend submissions may be confirmed Monday morning).
+              </span>
+            </label>
+          </fieldset>
+        </div>
+
+        <footer class="form-modal-footer">
+          <p id="trial-form-status" class="form-status" hidden role="status"></p>
+          <div class="form-modal-actions">
+            <button type="button" class="btn btn-light" data-close-modal>Cancel</button>
+            <button type="submit" class="btn btn-primary">Submit Trial Request</button>
+          </div>
+        </footer>
+      </form>
+    </div>
+  </dialog>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="index.html">
+            <img src="assets/images/youngs_horizontal_logo-298x72.webp" alt="Young's Gym — kids in motion" width="298" height="72" class="nav-logo-img nav-logo-img--footer">
+          </a>
+          <p>Family-owned gymnastics and cheerleading in Wake Forest, NC since 1994.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="classes.html">Gymnastics Classes</a></li>
+            <li><a href="camps.html">Camps</a></li>
+            <li><a href="parties.html">Birthday Parties</a></li>
+            <li><a href="parents-night-out.html">Parents Night Out</a></li>
+            <li><a href="private-lessons.html">Private Lessons</a></li>
+            <li><a href="team.html">Team &amp; Pre-Teams</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Schedules</h4>
+          <ul>
+            <li><a href="schedule.html">Live Schedule</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>About</h4>
+          <ul>
+            <li><a href="history.html">Our Story</a></li>
+            <li><a href="policies-faq.html">Policies &amp; FAQ</a></li>
+            <li><a href="forms.html">Forms</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="https://app.jackrabbitclass.com/jr3.0/ParentPortal/Login?orgID=360293" target="_blank" rel="noopener noreferrer">Parent Portal</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Visit</h4>
+          <ul>
+            <li>1213 S Main St</li>
+            <li>Wake Forest, NC 27587</li>
+            <li><a href="tel:+19195540606">919-554-0606</a></li>
+            <li><a href="mailto:office@youngsgym.com">office@youngsgym.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Young's Gymnastics &amp; Cheerleading, Inc.</p>
+        <p class="footer-disclaimer">Modern website recreation for portfolio purposes. Not affiliated with Young's Gym.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/forms.js"></script>
+</body>
+</html>
