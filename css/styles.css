@@ -122,6 +122,14 @@ a:hover {
   height: 16px;
 }
 
+.utility-bar-links {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
 .utility-bar a:not(.social-link) {
   color: rgba(255, 255, 255, 0.92);
   font-weight: 600;
@@ -900,12 +908,27 @@ a:hover {
 }
 
 .staff-role {
-  margin: 0 0 0.85rem;
+  margin: 0 0 0.35rem;
   color: var(--color-orange);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.staff-email {
+  margin: 0 0 0.85rem;
+  font-size: 0.9rem;
+}
+
+.staff-email a {
+  color: var(--color-navy);
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.staff-email a:hover {
+  color: var(--color-red);
 }
 
 .staff-bio {
