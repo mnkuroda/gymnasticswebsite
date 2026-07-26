@@ -48,128 +48,170 @@
     </nav>
   </header>
 
-  <main>
+  <main class="camps-page">
     <section class="page-hero">
       <div class="container">
         <span class="section-eyebrow">Programs</span>
         <h1>Camps</h1>
         <p>
-          Half-day themed summer camps and full-day programs during school breaks.
-          Pick the option that fits your family — details and registration below.
+          Themed summer weeks and full-day school-break camps — gymnastics, cheer, and nonstop fun
+          at Young's Gym.
         </p>
-        <nav class="camp-jump-nav" aria-label="Camp sections">
-          <a href="#summer-camps">Summer Camps</a>
-          <a href="#day-camps">Day Camps</a>
-        </nav>
       </div>
     </section>
 
-    <section class="section container camp-section" id="summer-camps">
-      <div class="section-header">
-        <span class="section-eyebrow">Summer 2026</span>
-        <h2>Summer Camps</h2>
-        <p>
-          Eight weeks of fun-filled gymnastics and cheerleading camps! Monday–Friday, 8:00 AM–12:00 PM
-          with exciting themes and lots of movement.
-        </p>
+    <section class="section container camps-overview" aria-labelledby="camps-overview-heading">
+      <div class="section-header centered">
+        <h2 id="camps-overview-heading">Choose your camp</h2>
+        <p>Two programs, one gym. Compare at a glance, then scroll for full details.</p>
       </div>
-      <div class="two-col-content">
-        <div class="content-block">
-          <h3>Gymnastics camps (ages 4.5–12)</h3>
-          <p>
-            Bars, beam, floor, vault, and trampoline! Kids learn basic and intermediate skills through
-            teamwork, fitness games, crafts, and themed activities. Split into age groups for safety.
-          </p>
-        </div>
-        <div class="content-block">
-          <h3>Cheerleading camps (ages 5–12)</h3>
-          <p>
-            Stunting, tumbling, cheers, dances, jumps, and more — with a performance for family and
-            friends at the end of the week!
-          </p>
-        </div>
-      </div>
-
-      <p class="schedule-notice">
-        <strong>Pricing:</strong> <strong>$75 non-refundable deposit</strong> at registration; remaining balance charged on the first day of camp (<strong>$195 total per week</strong>).
-      </p>
-
-      <div class="data-table-wrap mt-2">
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Week</th>
-              <th>Theme</th>
-              <th>Price</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>June 8–12</td><td>Pirates &amp; Treasure Hunts!</td><td>$195</td></tr>
-            <tr><td>June 15–19</td><td>Wet-n-Wild!</td><td>$195</td></tr>
-            <tr><td>June 22–26</td><td>Superhero Bootcamp!</td><td>$195</td></tr>
-            <tr><td>June 29–July 3</td><td>S'more Camping!</td><td>$195</td></tr>
-            <tr><td>July 13–17</td><td>More Wet-n-Wild!</td><td>$195</td></tr>
-            <tr><td>July 20–24</td><td>Youngs Gym Olympics!</td><td>$195</td></tr>
-            <tr><td>July 27–31</td><td>Even More Wet-n-Wild!</td><td>$195</td></tr>
-            <tr><td>August 3–7</td><td>Circus!</td><td>$195</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <p class="text-center mt-2">
-        <a class="btn btn-primary" href="https://app.jackrabbitclass.com/regv2.asp?id=360293" target="_blank" rel="noopener noreferrer">Register for Summer Camp</a>
-      </p>
-    </section>
-
-    <section class="section section-alt container camp-section" id="day-camps">
-      <div class="section-header">
-        <span class="section-eyebrow">School breaks</span>
-        <h2>Day Camps</h2>
-        <p>
-          Full-day program for ages 5–12 during school breaks and tracked-out weeks.
-          Online registration only — register at least two weeks in advance.
-        </p>
-      </div>
-
-      <div class="camp-details-grid">
-        <article class="camp-detail-card">
-          <h2>Time</h2>
-          <p><strong>8:00 AM – 5:00 PM</strong> (Monday – Friday)</p>
-          <p class="camp-detail-note">A late fee applies for pickups after 5:00 PM.</p>
-        </article>
-        <article class="camp-detail-card">
-          <h2>Ages</h2>
-          <p><strong>5–12</strong></p>
-        </article>
-        <article class="camp-detail-card">
-          <h2>Registration</h2>
-          <ul>
-            <li>Online registration only</li>
-            <li>Register at least <strong>two weeks prior</strong></li>
-            <li>Single daily sessions or full weeks available</li>
-            <li>Minimum of <strong>4 registered campers</strong> required to hold camp</li>
+      <div class="camps-overview-grid">
+        <a class="camp-overview-card" href="#summer-camps">
+          <span class="camp-overview-badge">Summer 2026</span>
+          <h3>Summer Camps</h3>
+          <p class="camp-overview-tagline">Half-day themed weeks · Mon–Fri mornings</p>
+          <ul class="camp-overview-stats">
+            <li><span>Hours</span> 8:00 AM – 12:00 PM</li>
+            <li><span>Ages</span> 4.5 – 12</li>
+            <li><span>Price</span> $195 / week</li>
           </ul>
-        </article>
-        <article class="camp-detail-card camp-detail-card--pricing">
-          <h2>Cost</h2>
-          <p class="camp-price-line"><span>Daily</span> <strong>$60.00/day</strong></p>
-          <p class="camp-price-line"><span>Weekly</span> <strong>$300.00/week</strong></p>
-        </article>
-        <article class="camp-detail-card">
-          <h2>What to bring</h2>
-          <p>Lunch and two snacks daily</p>
-        </article>
-        <article class="camp-detail-card">
-          <h2>What to wear</h2>
-          <p>Gym clothes (no belts, buckles, or zippers)</p>
-        </article>
+          <span class="camp-overview-link">View summer camps</span>
+        </a>
+        <a class="camp-overview-card" href="#day-camps">
+          <span class="camp-overview-badge">School breaks</span>
+          <h3>Day Camps</h3>
+          <p class="camp-overview-tagline">Full-day track-out &amp; break weeks</p>
+          <ul class="camp-overview-stats">
+            <li><span>Hours</span> 8:00 AM – 5:00 PM</li>
+            <li><span>Ages</span> 5 – 12</li>
+            <li><span>Price</span> $60/day · $300/week</li>
+          </ul>
+          <span class="camp-overview-link">View day camps</span>
+        </a>
       </div>
+    </section>
 
-      <p class="text-center mt-2">
-        <a class="btn btn-primary" href="https://app.jackrabbitclass.com/regv2.asp?id=360293" target="_blank" rel="noopener noreferrer">Register for Day Camp</a>
-      </p>
-      <p class="text-center" style="color: var(--color-muted); margin-top: 1rem;">
-        Questions? Call <a href="tel:+19195540606">919-554-0606</a> or email
+    <nav class="camps-subnav" aria-label="Camp sections">
+      <div class="container camps-subnav-inner">
+        <a class="camps-subnav-link is-active" href="#summer-camps" data-camp-target="summer-camps">Summer Camps</a>
+        <a class="camps-subnav-link" href="#day-camps" data-camp-target="day-camps">Day Camps</a>
+      </div>
+    </nav>
+
+    <section class="container camps-programs" aria-label="Camp details">
+      <article class="camp-program" id="summer-camps">
+        <header class="camp-program-head">
+          <span class="section-eyebrow">Summer 2026</span>
+          <h2>Summer Camps</h2>
+          <p>
+            Eight weeks of gymnastics and cheerleading camps with exciting themes, crafts, games,
+            and lots of movement — Monday through Friday mornings.
+          </p>
+        </header>
+
+        <div class="camp-program-facts" aria-label="Summer camp quick facts">
+          <span class="live-class-fact"><strong>Hours</strong> 8:00 AM – 12:00 PM</span>
+          <span class="live-class-fact"><strong>Ages</strong> 4.5 – 12</span>
+          <span class="live-class-fact live-class-fact--tuition"><strong>Price</strong> $195 / week</span>
+          <span class="live-class-fact"><strong>Deposit</strong> $75 non-refundable</span>
+        </div>
+
+        <div class="camp-program-body">
+          <div class="camp-program-copy">
+            <h3>What to expect</h3>
+            <div class="camp-program-columns">
+              <div>
+                <h4>Gymnastics camps</h4>
+                <p>
+                  Bars, beam, floor, vault, and trampoline! Kids learn basic and intermediate skills through
+                  teamwork, fitness games, crafts, and themed activities. Split into age groups for safety.
+                </p>
+              </div>
+              <div>
+                <h4>Cheerleading camps</h4>
+                <p>
+                  Stunting, tumbling, cheers, dances, jumps, and more — with a performance for family and
+                  friends at the end of the week!
+                </p>
+              </div>
+            </div>
+            <p class="camp-program-note">
+              <strong>Pricing:</strong> $75 non-refundable deposit at registration; remaining balance charged on the first day of camp ($195 total per week).
+            </p>
+          </div>
+
+          <div class="camp-program-schedule">
+            <h3>2026 weekly themes</h3>
+            <ol class="camp-week-list">
+              <li><span class="camp-week-date">June 8–12</span><span class="camp-week-theme">Pirates &amp; Treasure Hunts!</span><span class="camp-week-price">$195</span></li>
+              <li><span class="camp-week-date">June 15–19</span><span class="camp-week-theme">Wet-n-Wild!</span><span class="camp-week-price">$195</span></li>
+              <li><span class="camp-week-date">June 22–26</span><span class="camp-week-theme">Superhero Bootcamp!</span><span class="camp-week-price">$195</span></li>
+              <li><span class="camp-week-date">June 29–July 3</span><span class="camp-week-theme">S'more Camping!</span><span class="camp-week-price">$195</span></li>
+              <li><span class="camp-week-date">July 13–17</span><span class="camp-week-theme">More Wet-n-Wild!</span><span class="camp-week-price">$195</span></li>
+              <li><span class="camp-week-date">July 20–24</span><span class="camp-week-theme">Youngs Gym Olympics!</span><span class="camp-week-price">$195</span></li>
+              <li><span class="camp-week-date">July 27–31</span><span class="camp-week-theme">Even More Wet-n-Wild!</span><span class="camp-week-price">$195</span></li>
+              <li><span class="camp-week-date">August 3–7</span><span class="camp-week-theme">Circus!</span><span class="camp-week-price">$195</span></li>
+            </ol>
+          </div>
+        </div>
+
+        <footer class="camp-program-footer">
+          <a class="btn btn-primary" href="https://app.jackrabbitclass.com/regv2.asp?id=360293" target="_blank" rel="noopener noreferrer">Register for Summer Camp</a>
+        </footer>
+      </article>
+
+      <article class="camp-program" id="day-camps">
+        <header class="camp-program-head">
+          <span class="section-eyebrow">School breaks</span>
+          <h2>Day Camps</h2>
+          <p>
+            Full-day program during school breaks and tracked-out weeks. Online registration only —
+            register at least two weeks in advance.
+          </p>
+        </header>
+
+        <div class="camp-program-facts" aria-label="Day camp quick facts">
+          <span class="live-class-fact"><strong>Hours</strong> 8:00 AM – 5:00 PM</span>
+          <span class="live-class-fact"><strong>Ages</strong> 5 – 12</span>
+          <span class="live-class-fact live-class-fact--tuition"><strong>Daily</strong> $60.00</span>
+          <span class="live-class-fact live-class-fact--tuition"><strong>Weekly</strong> $300.00</span>
+        </div>
+
+        <div class="camp-program-body camp-program-body--single">
+          <div class="camp-info-grid">
+            <section class="camp-info-block">
+              <h3>Registration</h3>
+              <ul>
+                <li>Online registration only</li>
+                <li>Register at least <strong>two weeks prior</strong></li>
+                <li>Single daily sessions or full weeks available</li>
+                <li>Minimum of <strong>4 registered campers</strong> required to hold camp</li>
+              </ul>
+            </section>
+            <section class="camp-info-block">
+              <h3>What to bring</h3>
+              <p>Lunch and two snacks daily.</p>
+            </section>
+            <section class="camp-info-block">
+              <h3>What to wear</h3>
+              <p>Gym clothes — no belts, buckles, or zippers.</p>
+            </section>
+            <section class="camp-info-block camp-info-block--highlight">
+              <h3>Pickup</h3>
+              <p>Camp ends at 5:00 PM. A late fee applies for pickups after 5:00 PM.</p>
+            </section>
+          </div>
+        </div>
+
+        <footer class="camp-program-footer">
+          <a class="btn btn-primary" href="https://app.jackrabbitclass.com/regv2.asp?id=360293" target="_blank" rel="noopener noreferrer">Register for Day Camp</a>
+        </footer>
+      </article>
+    </section>
+
+    <section class="camps-contact section container">
+      <p>
+        Questions about camps? Call <a href="tel:+19195540606">919-554-0606</a> or email
         <a href="mailto:office@youngsgym.com">office@youngsgym.com</a>.
       </p>
     </section>
