@@ -725,28 +725,12 @@ a:hover {
 /* Mission statement */
 .mission-section {
   position: relative;
-  padding-block: clamp(2rem, 4vw, 2.75rem);
+  padding-block: 1.25rem 1.5rem;
   background: linear-gradient(135deg, var(--color-navy-dark) 0%, var(--color-navy) 45%, var(--color-navy-light) 100%);
-  overflow: hidden;
-}
-
-.mission-section::before {
-  content: "\201C";
-  position: absolute;
-  top: -0.1em;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: var(--font-display);
-  font-size: clamp(8rem, 20vw, 14rem);
-  line-height: 1;
-  color: rgba(255, 255, 255, 0.06);
-  pointer-events: none;
-  user-select: none;
 }
 
 .mission-card {
   position: relative;
-  z-index: 1;
   max-width: 52rem;
   margin-inline: auto;
   text-align: center;
@@ -754,13 +738,14 @@ a:hover {
 
 .mission-eyebrow {
   color: var(--color-yellow);
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.2rem;
+  font-size: 0.75rem;
 }
 
 .mission-card h2 {
-  margin: 0 0 0.85rem;
+  margin: 0 0 0.5rem;
   font-family: var(--font-display);
-  font-size: clamp(2.4rem, 5vw, 3.5rem);
+  font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0.04em;
@@ -770,28 +755,18 @@ a:hover {
 .mission-card h2::after {
   content: "";
   display: block;
-  width: 4rem;
-  height: 3px;
-  margin: 0.65rem auto 0;
+  width: 3rem;
+  height: 2px;
+  margin: 0.45rem auto 0.65rem;
   border-radius: 999px;
   background: linear-gradient(90deg, var(--color-yellow), var(--color-orange));
 }
 
 .mission-card p {
-  margin: 0 0 0.65rem;
-  color: rgba(255, 255, 255, 0.88);
-  font-size: clamp(1rem, 1.8vw, 1.1rem);
-  line-height: 1.6;
-}
-
-.mission-card .mission-lead {
-  font-size: clamp(1.05rem, 2vw, 1.2rem);
-  font-weight: 500;
-  color: white;
-}
-
-.mission-card p:last-child {
-  margin-bottom: 0;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+  line-height: 1.55;
 }
 
 .cta-band {
