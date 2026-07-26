@@ -982,16 +982,8 @@ a:hover {
   padding: clamp(1.5rem, 3vw, 2.25rem);
 }
 
-.camps-detail {
-  scroll-margin-top: 7rem;
-}
-
-.camps-detail-title {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.5rem 1rem;
-  margin: 0 0 0.5rem;
+.camps-panel-heading {
+  margin: 0 0 1.5rem;
   font-family: var(--font-display);
   font-size: clamp(1.75rem, 3.5vw, 2.25rem);
   font-weight: 400;
@@ -1000,40 +992,43 @@ a:hover {
   color: var(--color-navy);
 }
 
-.camps-detail-label {
-  font-family: var(--font-body);
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--color-muted);
-}
-
-.camps-detail-intro {
-  margin: 0 0 1.5rem;
-  max-width: 42rem;
-  color: var(--color-muted);
-}
-
-.camps-detail-grid {
+.camps-content-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
   gap: 2rem;
   align-items: start;
+  margin-bottom: 2rem;
 }
 
-.camps-detail-copy h3,
+.camps-content-main > p {
+  margin: 0 0 1.25rem;
+  color: var(--color-muted);
+}
+
+.camps-content-main h3,
 .camp-program-schedule h3,
-.camp-info-block h3 {
+.camps-policies h3 {
   margin: 0 0 0.85rem;
   font-size: 1.05rem;
   color: var(--color-navy);
 }
 
-.camps-divider {
-  margin: 2rem 0;
-  border: 0;
-  border-top: 1px solid var(--color-border);
+.camps-policies {
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius);
+  background: #f7fafd;
+  border: 1px solid var(--color-border);
+}
+
+.camps-policies-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+.camps-policies-list li + li {
+  margin-top: 0.45rem;
 }
 
 .camp-program-columns {
@@ -1174,7 +1169,7 @@ a:hover {
 }
 
 @media (max-width: 900px) {
-  .camps-detail-grid,
+  .camps-content-grid,
   .camp-info-grid {
     grid-template-columns: 1fr;
   }
