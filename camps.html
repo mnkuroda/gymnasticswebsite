@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Summer gymnastics and cheer camps at Young's Gym in Wake Forest, plus full-day camp options for school breaks.">
-  <title>Camps — Young's Gym</title>
+  <title>Summer Camps — Young's Gym</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -12,6 +12,12 @@
 </head>
 <body>
   <header class="site-header">
+    <div class="utility-bar">
+      <div class="utility-bar-inner">
+        <a href="https://app.jackrabbitclass.com/jr3.0/ParentPortal/Login?orgID=360293" target="_blank" rel="noopener noreferrer">Parent Portal</a>
+        <a href="https://app.jackrabbitclass.com/regv2.asp?id=360293" target="_blank" rel="noopener noreferrer">New Member Registration</a>
+      </div>
+    </div>
     <nav class="nav" aria-label="Main">
       <a class="nav-logo" href="index.html">
         <img src="assets/images/youngs_horizontal_logo-298x72.webp" alt="Young's Gym — kids in motion" width="298" height="72" class="nav-logo-img">
@@ -21,11 +27,26 @@
       </button>
       <ul class="nav-menu" id="nav-menu">
         <li><a href="index.html">Home</a></li>
-        <li><a href="classes.html">Classes</a></li>
-        <li><a href="schedule.html">Live Schedule</a></li>
-        <li><a href="camps.html">Camps</a></li>
-        <li><a href="parties.html">Parties</a></li>
-        <li><a href="team.html">Team</a></li>
+        <li class="nav-item nav-item--dropdown">
+          <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="nav-programs-menu">Programs <span class="nav-chevron" aria-hidden="true"></span></button>
+          <ul class="nav-dropdown-menu" id="nav-programs-menu">
+            <li><a href="classes.html">Gymnastics Classes</a></li>
+            <li><a href="day-camps.html">Day Camps</a></li>
+            <li><a href="parties.html">Birthday Parties</a></li>
+            <li><a href="parents-night-out.html">Parents Night Out</a></li>
+            <li><a href="private-lessons.html">Private Lessons</a></li>
+            <li><a href="camps.html">Summer Camps</a></li>
+            <li><a href="team.html">Team &amp; Pre-Teams</a></li>
+          </ul>
+        </li>
+        <li class="nav-item nav-item--dropdown">
+          <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="nav-schedules-menu">Schedules <span class="nav-chevron" aria-hidden="true"></span></button>
+          <ul class="nav-dropdown-menu" id="nav-schedules-menu">
+            <li><a href="schedule.html">Live Class Availability</a></li>
+            <li><a href="day-camp-openings.html">Day Camp Openings</a></li>
+            <li><a href="summer-camp-openings.html">Summer Camp Openings</a></li>
+          </ul>
+        </li>
         <li><a href="history.html">Our Story</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -38,11 +59,11 @@
   <main>
     <section class="page-hero">
       <div class="container">
-        <span class="section-eyebrow">Summer &amp; breaks</span>
-        <h1>Camps</h1>
+        <span class="section-eyebrow">Summer 2026</span>
+        <h1>Summer Camps</h1>
         <p>
-          Fun-filled gymnastics and cheerleading camps, plus full-day options for tracked-out students
-          and school breaks. Monday–Friday programs with exciting themes and lots of movement!
+          Eight weeks of fun-filled gymnastics and cheerleading camps! Monday–Friday, 8:00 AM–12:00 PM
+          with exciting themes and lots of movement.
         </p>
       </div>
     </section>
@@ -92,41 +113,9 @@
       </div>
 
       <p class="text-center mt-2">
-        <a class="btn btn-primary" href="https://app.jackrabbitclass.com/regv2.asp?id=360293" target="_blank" rel="noopener noreferrer">Register for Camp</a>
+        <a class="btn btn-primary" href="summer-camp-openings.html">View Summer Camp Openings</a>
+        <a class="btn btn-light" href="day-camps.html" style="margin-left: 0.5rem;">Looking for Day Camps?</a>
       </p>
-    </section>
-
-    <section class="section section-alt">
-      <div class="container">
-        <div class="section-header">
-          <h2>Day camp</h2>
-          <p>Full-day program for ages 5–12 during school breaks and tracked-out weeks.</p>
-        </div>
-        <div class="card-grid">
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">🕗</div>
-            <h3>8:00 AM – 5:00 PM</h3>
-            <p>Monday through Friday. Late fee applies for pickups after 5:00 PM.</p>
-          </article>
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">💵</div>
-            <h3>$60/day or $300/week</h3>
-            <p>Register online at least two weeks prior. Minimum 4 campers required to hold camp.</p>
-          </article>
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">🎉</div>
-            <h3>What to expect</h3>
-            <p>Structured fun, free play, group games, movie time, and inflatables on some Fridays!</p>
-          </article>
-        </div>
-        <div class="content-block mt-2">
-          <h3>What to bring</h3>
-          <ul>
-            <li>Lunch and two snacks daily</li>
-            <li>Gym clothes (no belts, buckles, or zippers)</li>
-          </ul>
-        </div>
-      </div>
     </section>
   </main>
 
@@ -142,11 +131,21 @@
         <div class="footer-col">
           <h4>Programs</h4>
           <ul>
-            <li><a href="classes.html">Classes</a></li>
-            <li><a href="schedule.html">Live Schedule</a></li>
-            <li><a href="camps.html">Camps</a></li>
+            <li><a href="classes.html">Gymnastics Classes</a></li>
+            <li><a href="day-camps.html">Day Camps</a></li>
+            <li><a href="camps.html">Summer Camps</a></li>
             <li><a href="parties.html">Birthday Parties</a></li>
-            <li><a href="team.html">Competitive Team</a></li>
+            <li><a href="parents-night-out.html">Parents Night Out</a></li>
+            <li><a href="private-lessons.html">Private Lessons</a></li>
+            <li><a href="team.html">Team &amp; Pre-Teams</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Schedules</h4>
+          <ul>
+            <li><a href="schedule.html">Live Class Availability</a></li>
+            <li><a href="day-camp-openings.html">Day Camp Openings</a></li>
+            <li><a href="summer-camp-openings.html">Summer Camp Openings</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -154,6 +153,7 @@
           <ul>
             <li><a href="history.html">Our History</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a href="https://app.jackrabbitclass.com/jr3.0/ParentPortal/Login?orgID=360293" target="_blank" rel="noopener noreferrer">Parent Portal</a></li>
           </ul>
         </div>
         <div class="footer-col">
