@@ -725,7 +725,7 @@ a:hover {
 /* Mission statement */
 .mission-section {
   position: relative;
-  padding-block: clamp(3.5rem, 7vw, 5.5rem);
+  padding-block: clamp(2rem, 4vw, 2.75rem);
   background: linear-gradient(135deg, var(--color-navy-dark) 0%, var(--color-navy) 45%, var(--color-navy-light) 100%);
   overflow: hidden;
 }
@@ -733,11 +733,11 @@ a:hover {
 .mission-section::before {
   content: "\201C";
   position: absolute;
-  top: -0.15em;
+  top: -0.1em;
   left: 50%;
   transform: translateX(-50%);
   font-family: var(--font-display);
-  font-size: clamp(12rem, 28vw, 22rem);
+  font-size: clamp(8rem, 20vw, 14rem);
   line-height: 1;
   color: rgba(255, 255, 255, 0.06);
   pointer-events: none;
@@ -749,18 +749,18 @@ a:hover {
   z-index: 1;
   max-width: 52rem;
   margin-inline: auto;
-  padding: clamp(2rem, 4vw, 3rem);
   text-align: center;
 }
 
 .mission-eyebrow {
   color: var(--color-yellow);
+  margin-bottom: 0.35rem;
 }
 
 .mission-card h2 {
-  margin: 0 0 1.5rem;
+  margin: 0 0 0.85rem;
   font-family: var(--font-display);
-  font-size: clamp(2.8rem, 6vw, 4.25rem);
+  font-size: clamp(2.4rem, 5vw, 3.5rem);
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0.04em;
@@ -770,22 +770,22 @@ a:hover {
 .mission-card h2::after {
   content: "";
   display: block;
-  width: 4.5rem;
-  height: 4px;
-  margin: 1rem auto 0;
+  width: 4rem;
+  height: 3px;
+  margin: 0.65rem auto 0;
   border-radius: 999px;
   background: linear-gradient(90deg, var(--color-yellow), var(--color-orange));
 }
 
 .mission-card p {
-  margin: 0 0 1rem;
+  margin: 0 0 0.65rem;
   color: rgba(255, 255, 255, 0.88);
-  font-size: clamp(1.05rem, 2vw, 1.2rem);
-  line-height: 1.75;
+  font-size: clamp(1rem, 1.8vw, 1.1rem);
+  line-height: 1.6;
 }
 
 .mission-card .mission-lead {
-  font-size: clamp(1.15rem, 2.2vw, 1.35rem);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
   font-weight: 500;
   color: white;
 }
