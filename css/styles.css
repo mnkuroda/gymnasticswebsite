@@ -91,20 +91,49 @@ a:hover {
 
 .utility-bar-inner {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   gap: 1.25rem;
   max-width: 1440px;
   margin-inline: auto;
   padding: 0.4rem clamp(1.25rem, 3vw, 2.5rem);
 }
 
-.utility-bar a {
+.utility-bar-social {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.92);
+  transition: background var(--transition), color var(--transition);
+}
+
+.social-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+.utility-bar a:not(.social-link) {
   color: rgba(255, 255, 255, 0.92);
   font-weight: 600;
 }
 
-.utility-bar a:hover {
+.utility-bar a:not(.social-link):hover {
   color: var(--color-lime);
+}
+
+.utility-bar .social-link:hover {
+  background: var(--color-lime);
+  color: var(--color-navy-dark);
 }
 
 .nav {
@@ -694,6 +723,42 @@ a:hover {
 }
 
 /* CTA band */
+.mission-section {
+  padding-block: clamp(3rem, 6vw, 4.5rem);
+}
+
+.mission-card {
+  max-width: 48rem;
+  margin-inline: auto;
+  padding: clamp(2rem, 4vw, 3rem);
+  border-radius: var(--radius-lg);
+  background: white;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.mission-card h2 {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  color: var(--color-navy);
+}
+
+.mission-card p {
+  margin: 0 0 1rem;
+  color: var(--color-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.mission-card p:last-child {
+  margin-bottom: 0;
+}
+
 .cta-band {
   padding-block: 3.5rem;
   background: linear-gradient(135deg, var(--color-navy-dark) 0%, var(--color-navy) 55%, var(--color-navy-light) 100%);
@@ -2092,6 +2157,23 @@ body.modal-open {
   color: var(--color-gold);
 }
 
+.contact-social {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+}
+
+.contact-social .social-link {
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+}
+
+.contact-social .social-link:hover {
+  background: var(--color-gold);
+  color: var(--color-navy);
+}
+
 .contact-form {
   padding: 1.75rem;
   border-radius: var(--radius-lg);
@@ -2167,6 +2249,23 @@ body.modal-open {
   margin: 0.75rem 0 0;
   font-size: 0.92rem;
   max-width: 32ch;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.footer-social .social-link {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.footer-social .social-link:hover {
+  background: var(--color-gold);
+  color: var(--color-navy);
 }
 
 .footer-col h4 {
